@@ -1,5 +1,8 @@
 package damas;
 
-public class PecaPreta {
-
+public class PecaPreta extends Peca{
+	PecaPreta(String pos){
+		type="preta";
+		position=pos;
+	}
 }
