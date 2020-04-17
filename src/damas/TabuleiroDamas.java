@@ -36,24 +36,26 @@ public class TabuleiroDamas {
 		
 	}
 	int[] convertString(String pos) {
-		int a=(int)(pos.charAt(0)-'a');
-		int b=7-(int)(pos.charAt(1)-'1');
+		int a=7-(int)(pos.charAt(1)-'1');
+		int b=(int)(pos.charAt(0)-'a');
 		int[] vet= {a,b};
 		return vet;
 	}
 	String convertVet(int[] vet) {
-		String pos=""+('a'+(char)vet[0])+((char)(7-vet[1])+'1');
+		String pos=""+('a'+(char)vet[1])+((char)(7-vet[0])+'1');
 		return pos;
 	}
 	public void mover(String origem,String destino) {
 		int[] vetor=convertString(origem);
-		tab[vetor[0]][vetor[1]].mover();
+		if(tab[vetor[0]][vetor[1]]!=null)
+			tab[vetor[0]][vetor[1]].mover(destino);
 	}
 	public void remover(String posicao) {
 		int[] vetor=convertString(posicao);
 		tab[vetor[0]][vetor[1]]=null;
 	}
 	public void colocar(String posicao,Peca objeto) {
-		
+		int[] pos=convertString(posicao);
+		tab[pos[0]][pos[1]]=objeto;
 	}
 }
