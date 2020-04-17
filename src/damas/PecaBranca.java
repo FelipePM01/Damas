@@ -5,4 +5,7 @@ public class PecaBranca extends Peca {
 		type="branca";
 		position=pos;
 	}
+	public void mover(String destino) {
+		
+	}
 }

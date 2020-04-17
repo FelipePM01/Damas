@@ -35,14 +35,25 @@ public class TabuleiroDamas {
 		}
 		
 	}
-	private int[] convertString(String pos) {
+	int[] convertString(String pos) {
 		int a=(int)(pos.charAt(0)-'a');
 		int b=7-(int)(pos.charAt(1)-'1');
 		int[] vet= {a,b};
 		return vet;
 	}
-	private String convertVet(int[] vet) {
+	String convertVet(int[] vet) {
 		String pos=""+('a'+(char)vet[0])+((char)(7-vet[1])+'1');
 		return pos;
+	}
+	public void mover(String origem,String destino) {
+		int[] vetor=convertString(origem);
+		tab[vetor[0]][vetor[1]].mover();
+	}
+	public void remover(String posicao) {
+		int[] vetor=convertString(posicao);
+		tab[vetor[0]][vetor[1]]=null;
+	}
+	public void colocar(String posicao,Peca objeto) {
+		
 	}
 }
