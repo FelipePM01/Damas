@@ -1,9 +1,11 @@
 package damas;
 
 public class PecaPreta extends Peca{
-	PecaPreta(String pos){
+	PecaPreta(String pos,TabuleiroDamas tabuleiro){
 		color="preta";
 		position=pos;
+		
+		this.tabuleiro=tabuleiro;
 	}
 	public void mover(String destino) {
 		int[] vetOrigem=tabuleiro.convertString(position);
@@ -17,13 +19,21 @@ public class PecaPreta extends Peca{
 			}
 			else {
 				if(between.length==1) {
+					Dama dama=new Dama(this);
 					int[] posicao=tabuleiro.convertString(between[0]);
 					Peca objeto=tabuleiro.tab[posicao[0]][posicao[1]];
 					if(objeto.color=="branca") {
 						tabuleiro.remover(between[0]);
-						tabuleiro.colocar(destino, this);
+						if(between[0].charAt(1)=='1') {
+							
+							tabuleiro.colocar(destino,dama);
+						}
+						else tabuleiro.colocar(destino, this);
 						tabuleiro.remover(position);
-						position=destino;
+						if(between[0].charAt(1)=='1') {
+							dama.position=destino;
+						}
+						else position=destino;
 					}
 				}
 			}

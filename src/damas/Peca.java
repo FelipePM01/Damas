@@ -4,6 +4,7 @@ public class Peca {
 	String color;
 	String position;
 	TabuleiroDamas tabuleiro;
+	boolean ehDama;
 	protected String[] between(String destino) {
 		String[] posicoes;
 		int[] vetOrigem=tabuleiro.convertString(position);

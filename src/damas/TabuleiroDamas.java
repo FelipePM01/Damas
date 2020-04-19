@@ -9,13 +9,13 @@ public class TabuleiroDamas {
 			for(int j=0;j<8;j+=2) {
 				if(i%2==1) {
 					int[] vet1= {i,j};
-					tab[i][j]=new PecaPreta(convertVet(vet1));
+					tab[i][j]=new PecaPreta(convertVet(vet1),this);
 					tab[i][j+1]=null;
 				}
 				else {
 					int[] vet1= {i,j+1};
 					tab[i][j]=null;
-					tab[i][j+1]=new PecaPreta(convertVet(vet1));
+					tab[i][j+1]=new PecaPreta(convertVet(vet1),this);
 				}
 			}
 		}
@@ -23,13 +23,13 @@ public class TabuleiroDamas {
 			for(int j=0;j<8;j+=2) {
 				if(i%2==1) {
 					int[] vet1= {i,j};
-					tab[i][j]=new PecaBranca(convertVet(vet1));
+					tab[i][j]=new PecaBranca(convertVet(vet1),this);
 					tab[i][j+1]=null;
 				}
 				else {
 					int[] vet1= {i,j+1};
 					tab[i][j]=null;
-					tab[i][j+1]=new PecaBranca(convertVet(vet1));
+					tab[i][j+1]=new PecaBranca(convertVet(vet1),this);
 				}
 			}
 		}
