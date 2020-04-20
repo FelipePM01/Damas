@@ -2,10 +2,9 @@ package damas;
 
 public class Dama extends Peca {
 	Dama(Peca object){
-		object.color=this.color;
-		object.position=this.position;
-		object.tabuleiro=this.tabuleiro;
-		
+		this.color=object.color;
+		this.tabuleiro=object.tabuleiro;
+		this.position=object.position;
 	}
 	public void mover(String destino) {
 		int[] vetOrigem=tabuleiro.convertString(position);
@@ -21,6 +20,7 @@ public class Dama extends Peca {
 				if(objeto!=null) {
 					if(objeto.color!=this.color&& tamanho==0) {
 						eliminado[tamanho]=objeto.position;
+						tamanho++;
 					}
 					else bloqueado=true;
 				}

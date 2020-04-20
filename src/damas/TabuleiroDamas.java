@@ -42,7 +42,7 @@ public class TabuleiroDamas {
 		return vet;
 	}
 	String convertVet(int[] vet) {
-		String pos=""+('a'+(char)vet[1])+((char)(7-vet[0])+'1');
+		String pos=""+((char)('a'+vet[1]))+((char)((7-vet[0])+'1'));
 		return pos;
 	}
 	public void mover(String origem,String destino) {
@@ -57,5 +57,24 @@ public class TabuleiroDamas {
 	public void colocar(String posicao,Peca objeto) {
 		int[] pos=convertString(posicao);
 		tab[pos[0]][pos[1]]=objeto;
+	}
+	void imprimir() {
+		for(int i=0;i<8;i++) {
+			System.out.print((8-i)+" ");
+			for(int j=0;j<8;j++) {
+				
+				if(tab[i][j]==null) {
+					System.out.print("- ");
+				}
+				else {
+					if(tab[i][j].color=="preta") System.out.print("P ");
+					else System.out.print("B ");
+				}
+					
+				
+			}
+			System.out.println("");
+		}
+		System.out.println("  a b c d e f g");
 	}
 }
