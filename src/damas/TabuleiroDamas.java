@@ -2,7 +2,8 @@ package damas;
 
 public class TabuleiroDamas {
 	Peca[][] tab=new Peca[8][8];
-	
+	String turno="brancas";
+	String atacante=null;
 	public TabuleiroDamas() {
 		
 		for(int i=0;i<3;i++) {
@@ -47,8 +48,23 @@ public class TabuleiroDamas {
 	}
 	public void mover(String origem,String destino) {
 		int[] vetor=convertString(origem);
-		if(tab[vetor[0]][vetor[1]]!=null)
+		if(tab[vetor[0]][vetor[1]]!=null) {
+			if(turno=="brancas") {
+				for(int i=0;i<8;i++) {
+					for(int j=0;j<8;j++) {
+						if(tab[i][j]!=null&&tab[i][j].color=="branca") tab[i][j].podeCapturar();
+					}
+				}
+			}
+			else {
+				for(int i=0;i<8;i++) {
+					for(int j=0;j<8;j++) {
+						if(tab[i][j]!=null&&tab[i][j].color=="preta") tab[i][j].podeCapturar();
+					}
+				}
+			}
 			tab[vetor[0]][vetor[1]].mover(destino);
+		}
 	}
 	public void remover(String posicao) {
 		int[] vetor=convertString(posicao);

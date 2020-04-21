@@ -30,4 +30,7 @@ public class Peca {
 	public void mover(String destino) {
 		return;
 	}
+	void podeCapturar() {
+		return;
+	}
 }
