@@ -5,6 +5,7 @@ public class Dama extends Peca {
 		this.color=object.color;
 		this.tabuleiro=object.tabuleiro;
 		this.position=object.position;
+		ehDama=true;
 	}
 	public void mover(String destino) {
 		int[] vetOrigem=tabuleiro.convertString(position);

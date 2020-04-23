@@ -83,8 +83,14 @@ public class TabuleiroDamas {
 					System.out.print("- ");
 				}
 				else {
-					if(tab[i][j].color=="preta") System.out.print("P ");
-					else System.out.print("B ");
+					if(tab[i][j].ehDama==false) {
+						if(tab[i][j].color=="preta") System.out.print("P ");
+						else System.out.print("B ");
+					}
+					else {
+						if(tab[i][j].color=="preta") System.out.print("Q ");
+						else System.out.print("C ");
+					}
 				}
 					
 				

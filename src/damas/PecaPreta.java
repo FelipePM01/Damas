@@ -4,7 +4,7 @@ public class PecaPreta extends Peca{
 	PecaPreta(String pos,TabuleiroDamas tabuleiro){
 		color="preta";
 		position=pos;
-		
+		ehDama=false;
 		this.tabuleiro=tabuleiro;
 	}
 	public void mover(String destino) {
